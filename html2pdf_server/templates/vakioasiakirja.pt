@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:pdf="http://www.xhtml2pdf.com/pdf"
+      tal:define="H python:297; W python:210; C python:22.86; R python:4.23;">
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+  <style>
+  /* See: http://xhtml2pdf.appspot.com/static/pisa-en.html */
+  @page {
+    @frame { -pdf-frame-content: HC0; top: 10mm; left: 20mm; }
+    @frame { -pdf-frame-content: HC4; top: 10mm;
+             left: <tal:replace replace="python:20+C*4" />mm; }
+    @frame { -pdf-frame-content: HC7; top: 10mm;
+             left: <tal:replace replace="python:20+C*7" />mm; }
+    @frame { -pdf-frame-content: FC0;
+             top: <tal:replace replace="python:H-(10+R*4)" />mm;
+             left: 20mm; right: 10mm; }
+
+    size: a4;
+
+    margin-left: <tal:replace replace="python:20+C*2" />mm;
+    margin-top: <tal:replace replace="python:10+R*7" />mm;
+    margin-bottom: <tal:replace replace="python:10+R*7" />mm;
+    margin-right: 10mm;
+  }
+
+  body, h1, h2, h3, h4, h5, h6 {
+    font-size: 10pt;
+    font-family: serif;
+    line-height: <tal:replace replace="python:R*1" />mm;
+  }
+
+  h1, h2, h3, .C0 { margin-left: -<tal:replace replace="python:C*2" />mm; }
+  #HC0 img { height: <tal:replace replace="python:R*4" />mm; }
+  #FC0 { border-top: 1px solid black; }
+
+  </style>
+</head>
+<body>
+
+<header tal:omit-tag="">
+  <div id="HC0">
+    <img src="https://www.jyu.fi/++theme++jyu.theme2011dz/images/jyu-logo.png" />
+  </div>
+  <div id="HC4">
+    Kuitti<br/>
+    <br/>
+    <br/>
+    1.1.2012
+  </div>
+  <div id="HC7">
+    <pdf:pagenumber/>
+  </div>
+</header>
+
+<article tal:omit-tag="">
+
+  <div class="C0">
+    Asko Soukka<br/>
+    Emännäntie 10 K 25<br/>
+    40740 Jyväskylä<br/>
+    <br/>
+  </div>
+
+  <div tal:omit-tag="" replace="structure data/bodytext" />
+
+</article>
+
+<footer tal:omit-tag="">
+  <div id="FC0">
+    <br/>
+    Emännäntie 10 K 25<br/>
+    40740 Jyväskylä<br/>
+    p. 040 8235947<br/>
+  </div>
+</footer>
+
+</body>
+</html>
