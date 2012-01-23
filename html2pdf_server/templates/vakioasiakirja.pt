@@ -42,38 +42,47 @@
 
 <header tal:omit-tag="">
   <div id="HC0">
-    <img src="https://www.jyu.fi/++theme++jyu.theme2011dz/images/jyu-logo.png" />
+    ACME ltd<br/>
+    Address<br/>
+    Phone<br/>
+    e-mail
   </div>
   <div id="HC4">
-    Kuitti<br/>
+    Doc type<br/>
     <br/>
     <br/>
-    1.1.2012
+    dd.mm.yyyy
   </div>
   <div id="HC7">
-    <pdf:pagenumber/>
+    <pdf:pagenumber/> (<pdf:pagecount/>)
   </div>
 </header>
 
 <article tal:omit-tag="">
 
   <div class="C0">
-    Asko Soukka<br/>
-    Emännäntie 10 K 25<br/>
-    40740 Jyväskylä<br/>
+    John Doe<br/>
+    Address<br/>
+    City<br/>
     <br/>
   </div>
 
-  <div tal:omit-tag="" replace="structure data/bodytext" />
+  <h1>Heading</h1>
+
+  <p>Message</p>
+
+  <h2>Sub-heading</h2>
+
+  <p>Message</p>
 
 </article>
 
 <footer tal:omit-tag="">
   <div id="FC0">
     <br/>
-    Emännäntie 10 K 25<br/>
-    40740 Jyväskylä<br/>
-    p. 040 8235947<br/>
+    ACME ltd<br/>
+    Address<br/>
+    Phone<br/>
   </div>
 </footer>
 
