@@ -4,7 +4,7 @@
       xmlns:pdf="http://www.xhtml2pdf.com/pdf"
       tal:define="H python:297; W python:210; C python:22.86; R python:4.23;">
 <head>
-  <title></title>
+  <title>${title|string:Vakioasiakirja}</title>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
   <style>
   /* See: http://xhtml2pdf.appspot.com/static/pisa-en.html */
@@ -51,7 +51,7 @@
     Doc type<br/>
     <br/>
     <br/>
-    dd.mm.yyyy
+    ${date|string:dd.mm.yyyy}
   </div>
   <div id="HC7">
     <pdf:pagenumber/> (<pdf:pagecount/>)

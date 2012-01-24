@@ -6,8 +6,6 @@
     name="default"
     pattern="/{template}"
     view=".server.render"
-    request_method="GET"
-    request_param="data"
     />
 
 </configure>

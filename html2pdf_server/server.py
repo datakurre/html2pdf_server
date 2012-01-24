@@ -11,12 +11,11 @@ from xhtml2pdf import pisa
 
 def render(request):
     # Get url dispatch and request data
-    name = request.matchdict.get('template', 'default')
-    data = request.GET['data'] or {}
+    name = request.matchdict['template']
 
     # Get template and render it into HTML
     template = get_renderer('templates/%s.pt' % name)
-    html = template(data, request)
+    html = template(request.params, request)
 
     # Create PDF from HTML
     pdf = StringIO()
